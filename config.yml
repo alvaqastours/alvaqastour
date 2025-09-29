@@ -5,7 +5,7 @@ backend:
 media_folder: "assets/images"     # Folder where uploaded images are stored
 public_folder: "/assets/images"   # Public path to images
 
-site_url: "https://yourdomain.com" # Replace with your actual domain
+site_url: "https://alvaqastours.com" # Replace with your actual domain
 
 collections:
   - name: "pages"
@@ -26,3 +26,4 @@ collections:
           - { label: "Page Title", name: "title", widget: "string" }
           - { label: "Header Image", name: "header_image", widget: "image", required: false }
           - { label: "Content", name: "body", widget: "markdown" }
+
