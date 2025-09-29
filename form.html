@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Newsletter Subscription</title>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+</head>
+
+<body>
+  <form id="newsletter-form">
+    <input type="email" name="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+  <div id="response"></div>
+
+  <script>
+  $("#newsletter-form").on("submit", function(e) {
+    e.preventDefault();
+
+    $.ajax({
+      url: "https://shaikhfaizan.ct.ws/newsletter/subscribe.php",
+      type: "POST",
+      data: $(this).serialize(),
+      dataType: "json",
+      success: function(res) {
+        $("#response").text(res.message);
+        if (res.status === "success") {
+          $("#newsletter-form")[0].reset();
+        }
+      },
+      error: function(xhr, status, error) {
+        console.log("AJAX Error:", status, error, xhr.responseText);
+        $("#response").text("⚠️ Something went wrong. Try again!");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
