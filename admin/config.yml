@@ -1,9 +1,9 @@
 backend:
   name: git-gateway
-  branch: main  # replace with your GitHub branch name
+  branch: main   # Replace with your GitHub branch
 
 media_folder: "assets/images"     # Folder where uploaded images are stored
-public_folder: "/assets/images"   # Public path to images
+public_folder: "/assets/images"   # Public path for images
 
 site_url: "https://alvaqastours.com" 
 
